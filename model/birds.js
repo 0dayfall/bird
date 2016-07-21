@@ -28,7 +28,7 @@ db.open(function(err, collection) {
 });
 
 /*
- * find a return all visible birds as a body of json
+ * find and return all visible birds as a body of json
  */
 exports.findAll = function(req, res) {
 	db.collection('birds', function(err, collection) {
@@ -74,7 +74,7 @@ exports.findOne = function(req, res) {
 };
 
 /*
- * add a bird, look for which parameters are included, add the non mandatory
+ * add a bird, look for which parameters are included, add the non mandatory ones
  * check if others are correct (only continents)
  */
 exports.addOne = function(req, res) {

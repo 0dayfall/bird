@@ -4,12 +4,12 @@ Clone from git and use:
 
 cd birds && npm install
 
-start the app
+start the app: node app.js
 
-run the tests with mocha
+in another terminal run the tests with mocha: mocha
 
   bird tests
-    - post bird (without added, visible)
+    - post bird (without parameters: added, visible)
 
 this test posts are bird with only the mandatory parameters
 
@@ -23,7 +23,7 @@ this test posts a bird with duplicate continents
 
     - get all birds, not the invisible ones..
 
-this tests get all the birds except the invisible ones
+this tests gets all the birds except the invisible ones
 
     - get a specific bird
 
