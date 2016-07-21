@@ -43,9 +43,9 @@ get all birds, it should be 1
 
 Important parts of the code is in routes.js:
 
-router.get('/birds', birds.findAll);
-router.get('/birds/:id', birds.findOne);
-router.post('/birds', birds.addOne);
-router.delete('/birds/:id', birds.deleteOne);
+- router.get('/birds', birds.findAll);
+- router.get('/birds/:id', birds.findOne);
+- router.post('/birds', birds.addOne);
+- router.delete('/birds/:id', birds.deleteOne);
 
 this code routes requests to birds.js - birds.js connects with the database. It could also be that only parameters were checked for logic and an additional bird provider would access database, but now it's in the same place.

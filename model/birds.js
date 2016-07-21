@@ -5,6 +5,9 @@ var Server = require('mongodb').Server;
 //var createModel = require('./createModel');
 var _ = require('underscore');
 
+/*
+ * open a database connection
+ */
 db = new Db('birds', new Server('localhost', '27017', {
 	auto_reconnect: true
 }, {}));
@@ -24,6 +27,9 @@ db.open(function(err, collection) {
 	});
 });
 
+/*
+ * find a return all visible birds as a body of json
+ */
 exports.findAll = function(req, res) {
 	db.collection('birds', function(err, collection) {
 		if (err) {
@@ -38,6 +44,9 @@ exports.findAll = function(req, res) {
 	});
 };
 
+/*
+ * find a specific bird
+ */
 exports.findOne = function(req, res) {
 	db.collection('birds', function(err, collection) {
 		if (err) {
@@ -64,6 +73,10 @@ exports.findOne = function(req, res) {
 	});
 };
 
+/*
+ * add a bird, look for which parameters are included, add the non mandatory
+ * check if others are correct (only continents)
+ */
 exports.addOne = function(req, res) {
 	if (req.body.added == null)
 		req.body.added = new Date().toISOString().slice(0, 10);
@@ -89,6 +102,9 @@ exports.addOne = function(req, res) {
 	}
 };
 
+/*
+ * delete a specific bird
+ */
 exports.deleteOne = function(req, res) {
 	db.collection('birds', function(err, collection) {
 		if (err) {
