@@ -95,8 +95,8 @@ exports.addOne = function(req, res) {
 				if (err) {
 					return next(err);
 				}
-				res.status = 200;
-				res.send(req.body);
+				//res.status = 201;
+				res.status(201).send(req.body);
 			});
 		});
 	}

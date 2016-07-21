@@ -8,13 +8,13 @@ describe('bird tests', function() {
   it('post bird (without added, visible)', function(done) {
     superagent.post('http://localhost:3000/birds')
       .send({
-        name: 'Falken',
+        name: 'Falk',
         family: 'Trast',
         continents: ['Africa', 'Europa']
       })
       .end(function(e, res) {
         expect(res).to.exist;
-        expect(res.statusCode).to.be(200);
+        expect(res.statusCode).to.be(201);
         birdId = res.body._id;
         done();
       })
@@ -24,15 +24,15 @@ describe('bird tests', function() {
     superagent.post('http://localhost:3000/birds')
       .send({
         name: 'Kaja',
-        family: 'Falk',
-        continents: ['USA', 'Europa'],
+        family: 'Bird',
+        continents: ['Asia', 'Europa'],
         added: new Date().toISOString().slice(0, 10),
         visible: true
       })
       .end(function(e, res) {
         // this is should.js syntax, very clear
         expect(res).to.exist;
-        expect(res.statusCode).to.be(200);
+        expect(res.statusCode).to.be(201);
         done();
       })
   });
@@ -40,8 +40,8 @@ describe('bird tests', function() {
   it('and one more with duplicate continents', function(done) {
     superagent.post('http://localhost:3000/birds')
       .send({
-        name: 'Kaja',
-        family: 'Falk',
+        name: 'Mås',
+        family: 'Sjöfågel',
         continents: ['Europa', 'Europa'],
         added: new Date().toISOString().slice(0, 10),
         visible: true
