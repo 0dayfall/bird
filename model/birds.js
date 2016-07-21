@@ -2,7 +2,7 @@ var BSON = require('bson').BSONPure;
 var Db = require('mongodb').Db;
 var Connection = require('mongodb').Connection;
 var Server = require('mongodb').Server;
-var createModel = require('./createModel');
+//var createModel = require('./createModel');
 var _ = require('underscore');
 
 db = new Db('birds', new Server('localhost', '27017', {

@@ -5,7 +5,7 @@ var BSON = require('bson').BSONPure;
 var Db = require('mongodb').Db;
 var Connection = require('mongodb').Connection;
 var Server = require('mongodb').Server;
-var createModel = require('../model/createModel');
+//var createModel = require('../model/createModel');
 var birds = require('../model/birds');
 
 //createModel();
