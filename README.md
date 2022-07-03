@@ -1,5 +1,7 @@
 # bird
 
+This repo contains the solutions for a programming test
+
 Clone from git and use:
 
 cd birds && npm install
